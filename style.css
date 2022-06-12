@@ -1,0 +1,391 @@
+body {
+  margin: 0;
+  font-family: "Roboto", -apple-system, apple color emoji, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+.main {
+  display: flex;
+}
+.sidebar {
+  display: flex;
+  width: 420px;
+  height: 100vh;
+  flex-shrink: 0;
+  background-color: white;
+  flex-direction: column;
+}
+/* шапка сайд-бара */
+.sidebar-header {
+  width: 388px;
+  height: 56px;
+  padding: 8px 16px 5px 16px;
+  background-color:white;
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-right: 1px solid rgb(226, 226, 226);
+}
+.icon-sidebar {
+  padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  height: 20px;
+  opacity: 0.5;
+}
+.icon-sidebar-hover:hover {
+  background-color: rgb(243, 242, 242);
+  cursor: pointer;
+}
+.search-sidebar {
+  margin: 0 7px;
+  width: 224px;
+  padding: 10px 64px 10px 44px;
+  border: 1px solid rgb(220, 220, 220);
+  font-size: 16px;
+  border-radius: 20px;
+  outline: none;
+}
+.search-sidebar::placeholder {
+  color: rgb(161, 161, 161);
+  font-size: 16px;
+}
+.search-icon {
+  position: absolute;
+  left: 80px;
+}
+/* закончил шапку сайд-бара */
+/* Начал делать чат-лист */
+.chatlist {
+  width: 404px;
+  padding: 8px 8px 0 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* Делаем скролбар для sidebar */
+}
+
+.chatlist::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+.chatlist::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgb(220, 220, 220);
+}
+
+.chatlist::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(177, 177, 177);
+}
+
+.chatlist::-webkit-resizer {
+  background-image: url('');
+  background-repeat: no-repeat;
+  width: 4px;
+  height: 0px
+}
+
+.chatlist::-webkit-scrollbar {
+  width: 4px;
+}
+/* Закончили делать скролбар */
+.sidebar__chat {
+  width: 386px;
+  height: 54px;
+  background-color:white;
+  border-radius: 10px;
+  padding: 9px;
+  display: flex;
+  align-items: center;
+}
+.sidebar__chat:hover{
+  background-color: rgba(238, 238, 238, 0.97);
+  cursor: pointer;
+}
+.user-caption {
+  padding: 1px 7px 1px 9px;
+  width: 316px;
+  height: 51px;
+  position: relative;
+}
+.dialog-title {
+  height: 27px;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+.dialog-subtitle {
+  margin-top: -2px;
+  color: grey;
+  font-size: 16px;
+  height: 27px;
+}
+.diolog-time {
+  position:absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 13px;
+  color: grey;
+}
+/* Закончил делать чат-лист */
+/* Делаем основную панель */
+.chat-container {
+  display: flex;
+  height: 100vh;
+  background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612740451_60-p-goluboi-fon-telegramm-75.jpg);
+  background-size: 540px auto;
+  background-repeat: repeat;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center; 
+}
+/* Хедер основной панели */
+.chat-header {
+  background-color:rgb(255, 255, 255);
+  height: 56px;
+  width: 97%;
+  padding: 5px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.chat-header__profile {
+  height: 42px;
+  display: flex;
+  flex-grow: 1;
+}
+.chat-header__profile-position {
+  display: flex;
+  flex-direction: column;
+  padding-left: 18px;
+}
+.chat-header__profile-title {
+  height: 21px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.chat-header__profile-last-time {
+  color: grey;
+  font-size: 14px;
+}
+
+.chat-header__buttons {
+  display: flex;
+  align-items: center;
+  width: 140px;
+  justify-content: space-between;
+}
+.chat-header__button {
+  padding: 10px;
+  border-radius: 40%;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  opacity: 0.7;
+}
+.chat-header__button:hover {
+  background-color:rgb(237, 237, 237);
+  cursor: pointer;
+}
+/* Закончил хедер основной панели */
+
+/* окно чата */
+.chat {
+  display: flex;
+  width: 100%;
+  height: 2000px; 
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.chat__area {
+  display: flex;
+  width: 670px;
+  flex-direction: column;
+  align-items: flex-end;
+  
+  position: relative;
+  overflow: auto;
+}
+.chat__area::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(220, 220, 220, 0);
+}
+.chat__area::-webkit-scrollbar {
+  width: 4px;
+}
+.chat__area__video-contain {
+  position: relative;
+  width: 250px;
+  margin: 5px 60px;
+  position: relative;
+}
+.chat__area__video {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  outline: none;
+}
+.chat__area__video-time {
+  font-size: 12px;
+  color: rgb(255, 255, 255);
+  background-color:rgba(156, 156, 156, 0.327);
+  bottom: 3px;
+  right: 5px;
+  position: absolute;
+  padding: 3px;
+  border-radius: 5px;
+}
+.chat__area__video::-webkit-media-controls {
+  display: none !important;
+}
+.chat__area__messange {
+  max-width: 480px;
+  padding: 6px 40px 6px 10px;
+  margin: 2px 60px 2px 1px;
+  background-color: #d9ffb5;
+  border-radius: 10px;
+  position: relative;
+}
+.chat__area_messange__time {
+  font-size: 12px;
+  color:rgb(156, 156, 156);
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+.chat__area_messange__hidden-smile {
+  width: 30px;
+  height: 25px;
+  background-color: white;
+  position: absolute;
+  bottom: -2px;
+  right: -20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  opacity: 0;
+  cursor: pointer;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+}
+#chat__area_messange__hidden-smile-answer {
+  right: none;
+  left: -20px;
+}
+.chat__area__messange:hover .chat__area_messange__hidden-smile {
+  opacity: 1;
+}
+#chat__area__messange__answer {
+  background-color: white;
+  align-self: flex-start;
+}
+
+.chat__area__messange__unread {
+  align-self: center;
+  background-color: rgba(129, 129, 129, 0.497);
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 10px;
+}
+/* текстовая строка основной панели */
+.chat-input {
+  width: 670px;
+  height: 56px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 5px 0 15px 0;
+}
+.chat-input__form {
+  width: 514px;
+  height: 21px;
+  padding: 15px 48px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+.chat-input__form::placeholder {
+  font-size: 16px;
+  color:rgb(184, 184, 184);
+  
+}
+.chat-input__smile {
+  position:absolute;
+  left: 8px;
+  border-radius: 50%;
+  top: 10px;
+  opacity: 0.6;
+  padding: 5px;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.chat-input__smile:hover {
+  background-color:rgb(232, 232, 232);
+}
+.chat-input__clip {
+  position: absolute;
+  right: 65px;
+  border-radius: 40%;
+  top: 10px;
+  opacity: 0.6;
+  padding: 5px;
+  transition-property: background-color;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+.chat-input__clip:hover {
+  background-color: rgb(232, 232, 232);
+}
+/* .chat-input__clip:hover + .chat-input__clip-menu { */
+  /* display: block; */
+  .chat-input__clip-contain:hover .chat-input__clip-menu {
+  opacity: 1;
+}
+.chat-input__clip-menu {
+  width: 164px;
+  height: 62px;
+  background-color:rgb(233, 233, 233);
+  position: absolute;
+  top: -68px;
+  right: 60px;
+  border-radius:10px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: opacity 1s ease-in;
+  /* display: none; */
+  opacity: 0;
+}
+.clip-menu-element {
+  width: 158px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  margin: 3px;
+  border-radius: 8px;
+}
+.clip-menu-element:first-child {
+  margin-bottom: 0;
+}
+.clip-menu-element:last-child {
+  margin-top: 0;
+}
+.clip-menu-element:hover {
+  background-color:rgb(209, 209, 209);
+  cursor: pointer;
+}
+.clip-menu-element img {
+  padding: 0 15px;
+}
+.chat-input__icon-micro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3390ec;
+  border-radius: 50%;
+  width: 47px;
+  height: 47px;
+  margin-left: 5px;
+  cursor: pointer;
+}
